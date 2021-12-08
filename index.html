@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Looking into XXX space technology</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body, section, img, h1, p, div {margin: 0;}
+		body {perspective:300px; background: black ;width: 100vw; height: 100vh; overflow:hidden;}
+		section { overflow:hidden; word-break: keep-all;}
+
+		img{display: block; position: absolute; width:10px; animation: r 4s linear forwards; opacity: 100%; z-index: -100px; }
+		
+		@keyframes r { to{ transform: translate3d(0,0,500px)}
+			from{ transform: translate3d(0,0,-1000px)} }
+
+		
+
+
+		
+		.absolute {position: absolute; display: block;}
+
+		.row1 {width: 100vw; height: 100vh; overflow:hidden; }
+
+		.row2{ width: 100%; height: 600px; top: 0vh; position: relative; }
+		
+		
+		.row3{ border: 3px solid #1CE8E3; transition: all 0.5s; box-sizing: border-box; box-shadow: 1px 1px 20px 1px #1CE8E3;
+			border-radius: 70px 0px 0px 0px;  
+			width: 16vw; height: 23vh; left: 3vw; top:80px ; overflow:hidden;
+			font-weight: 500; text-align: center; color: white;  }
+		
+		.row4{border: 3px solid #1CE8E3; transition: all 0.5s; box-sizing: border-box; border-radius: 70px 0px 0px 0px;
+		 	box-shadow: 1px 1px 20px 1px #1CE8E3 ; 
+		 	width: 16vw; height: 23vh; left: 3vw; top:550px; 
+		 	overflow:hidden; text-align: center; color: white;font-size: 1.5vw;}
+		
+		.row5{ border: 3px solid #1CE8E3; transition: all 0.5s; box-sizing: border-box; border-radius: 70px 0px 0px 0px; 
+			box-shadow: 1px 1px 20px 1px #1CE8E3;
+			width: 16vw; height: 23vh; left: 73vw; top:300px; 
+			overflow:hidden; text-align: center; color: white; font-size: 1vw; }
+		
+
+
+		
+		/*텍스트, 그래프 호버*/
+		.container{display: flex;}
+		.col1:hover { width: 30%; height: 60%;overflow: scroll; top:30px;;}
+		.col1:hover ~ #d1{width: 5%; }
+		
+		.col2:hover {width: 43%; height: 33%;overflow: scroll; top:440px;; font-weight: 700; }
+		.col2:hover ~ #d2{width: 50%; font-weight: 500; }
+
+		.col3:hover {width: 25%; height: 85%;overflow: scroll; top:50px;; font-weight: 700;  }
+		.col3:hover ~ #d3{width: 30%; font-weight: 500;  }
+
+		.img1{width: 100%;}
+
+		
+
+		
+		
+		/*중앙 원 위치, 애니메이션*/
+		.c1 { transform: translate(-50%, -50%);
+				left: calc(50% - 21.5vw); top :21px; width: 42vw;  
+				}
+
+		.c2 { transform: translate(-50%, -50%);
+				left: calc(50% - 19vw); top :65px; width: 38vw;   
+				}
+		
+		.c3 { transform: translate(-50%, -50%);
+			left: calc(50% - 15.5vw); top :113px; width: 31vw; 
+			}
+		
+		.c4 { transform: translate(-50%, -50%); 
+				left: calc(50% - 11.5vw); top :260px; width: 22vw;}
+		
+		.c5 { transform: translate(-50%, -50%);
+				left: calc(50% - 12vw); top :168px; width: 23vw;
+				}
+		
+		.c6 { transform: translate(-50%, -50%);
+				left: calc(50% - 8.3vw); top :230px; width: 16vw; 
+				}
+		
+		.c7 { transform: translate(-50%, -50%);
+				left: calc(50% - 7.8vw); top :240px; width: 15vw;
+				animation: k5 5s infinite;}
+		
+		.c8 {
+				left: calc(50% - 3.5vw); top :265px; width: 7vw; 
+				animation: jump 2s infinite;}
+
+		
+		/*? 호버*/
+		#two{ opacity: 0 }	
+		#one:hover ~ #two { opacity: 1 ; animation: k6 0.8s infinite;  }
+		#one:hover { animation: none;  width: 9vw; left: calc(50% - 4.5vw);}
+		
+		.text1 {color: white; font-size: 4vw; font-weight: 700;
+				position: absolute; top: 0vh; left: 22.5%}
+
+
+		@keyframes k1 { 0% {transform: rotate(0);} 100%{transform: rotate(360deg)}}
+
+		@keyframes k2 { 0% {transform: rotate(0);} 
+						30% {transform: rotate(200deg);}
+						100%{transform: rotate(360deg);}
+					} 
+
+		@keyframes k3 { 0% {transform: rotate(0) scale(1);} 
+						35% {transform: rotate(360deg) scale(1);}
+						40%{transform: rotate(360deg) scale(.5);}
+						60%{transform: rotate(400deg) scale(.5);}
+						65%{transform: rotate(0deg) scale(1);}
+						100%{transform: rotate(360deg) scale(1);} 
+					}
+		@keyframes k4 { 0% {transform: rotate(0) scale(1);} 
+						35% {transform: rotate(360deg) scale(1);}
+						40%{transform: rotate(360deg) scale(.6);}
+						60%{transform: rotate(400deg) scale(.6);}
+						65%{transform: rotate(0deg) scale(1);}
+						100%{transform: rotate(360deg) scale(1);} 
+					}
+		@keyframes k5 { 0% {transform: scale(1);} 
+						35% {transform: scale(1);}
+						40%{transform: scale(.7);}
+						60%{transform: scale(.7);}
+						65%{transform: scale(1);}
+						100%{transform: scale(1);} 
+					}
+
+		@keyframes jump{0%{} 100%{transform: rotate3d(0,1,0,360deg); } }
+
+
+
+		@keyframes k6 { 0% {opacity: 40%;} 100%{opacity: 100%}}
+
+		
+		/*왼쪽 라인과 원 디피*/
+		.L1 {width: 0.3%; height: 72%; left: 1vw; top:200px; animation: k6 1s infinite; }
+		.L2 {width: 0.8%;  left: 0.8vw; top:70px; animation: k6 0.5s infinite; }
+		.L3 {width: 0.8%;  left: 0.8vw; top:105px; animation: k6 0.5s infinite; }
+		.L4 {width: 0.8%;  left: 0.8vw; top:145px; animation: k6 0.5s infinite; }
+
+		#poetText {position: absolute; font-size: 6vw; color: white; z-index: 30;
+				left: 8vw; top: 38vh;font-weight: 700; letter-spacing :30px;}
+
+		/*타이머 */
+		.row6 { width: 16vw; height: 26vh; left: 83vw; top:20px ; }
+		.time1 {width: 80%; left: 2vw;}
+		.time2 {width: 65%; left: 3.3vw; top: 15px;}
+		.time3 {width: 30%; left: 3.3vw; top: 20px;}
+		
+		#leftTime { font-size: 2vw; font-weight: 700; color: white;  
+			text-align: center; margin-top: 70px; }
+
+		/*컬러*/
+		#c1 {position: absolute; left: 2vW; top:2.5vh; }
+		.B2 {background-color:transparent; width: 150px;height: 30px;border-color: #1CE8E3; }
+
+		#poetText2 {position: absolute; font-size: 6vw; color: white; z-index: 30;
+				left: 8vw; top: 0vh;font-weight: 700; letter-spacing :30px;}
+
+
+		
+		
+		
+
+	</style>
+</head>
+<body >
+	<section class="row1" >
+
+		<div id="poetText"></div>
+		<div id="poetText2"></div>
+			
+		<!-- 중앙 원 -->
+		<div class="row2" id="everyText">
+			<img src= "c1.png"  class=" absolute c1" >
+			<img src= "c2.png"  class=" absolute c2" >
+			<img src= "c3.png"  class=" absolute c3" >
+			<img src= "c4.png"  class=" absolute c4" >
+			<img src= "c5.png"  class=" absolute c5" >
+			<img src= "c6.png"  class=" absolute c6" >
+			<img src= "c7.png"  class=" absolute c7" >
+			<img src= "c8.png"  class=" absolute c8" id="one" >
+			<div id="two" class="text1"> No Dedicated Organization</div>
+		</div>
+
+		<!-- 타이머 -->
+		<div class=" absolute row6" >
+			<img src= "t1.png" class=" time1 ">
+			<img src= "t2.png" class=" time2">
+			<img src= "t3.png" class=" time3">
+			<div id="leftTime" ></div>
+			
+		</div>
+
+		<!-- 그래프와 플렉시블 박스 -->
+		<div class="absolute row3 col1 " id="d1">
+			<img src= "how1.png" class=" img1 ">
+		</div>
+
+		
+		<div class="absolute row4 col2 " id="d2">
+		우주 개발 계획<br>우주발사체 자력발사 
+		</div>
+		
+		
+		<div class="absolute row5 col3 " id="d3">
+		
+		우주개발 인력 (단위: 명)<br>
+		1만7000 / ? / 2400 / 1500 / 1000<br><br>
+		우주 개발 예산 (단위: 백만불)<br>
+		21,500 / 2,000 / 3,978 / 1,459 / 476<br><br>
+		민간기업 우주 투자 규모 (단위: 백만불)<br>
+		26,383 / X / 3,429 / 785 / 412<br>
+		
+		</div>
+
+		<!-- 디스플레이 왼쪽 라인과 원 -->
+		<img src= "line1.png"  class=" absolute L1" >
+		<img src= "line2.png"  class=" absolute L2" >
+		<img src= "line2.png"  class=" absolute L3" >
+		<img src= "line2.png"  class=" absolute L4" >
+
+		<input type="color" id="c1" class="B2" >
+
+		
+
+		
+		
+	
+</section>
+
+		<script type="text/javascript">
+
+			// 타이머
+			var myTimera = setInterval(myFunction , 1000);
+			var b = 0;
+			function myFunction(){
+				var time = new Date();
+				var t = time.getSeconds();
+
+				leftTime.innerHTML = "00" + ":" + "0" +(10-b) + "s";
+				b = b + 1; if (b == 12)
+				{ clearInterval(myTimera);
+					leftTime.innerHTML = "NONE";
+					alert("No Time To Lose.");
+					
+					document.body.style.background = "#606060";
+					
+					clearInterval(d1); d1.innerHTML = " ";
+					clearInterval(d2); d2.innerHTML = " ";
+					clearInterval(d3); d3.innerHTML = " ";
+					clearInterval(myTimer); poetText.innerHTML = "DOSE NOT EXIST";
+					
+
+
+					}
+				}
+
+
+
+
+
+			
+
+		
+
+
+
+
+			// 한국 텍스트 배열
+			var poet = "K O R E A ";
+			var poetArr = poet.split(" ");
+			console.log(poetArr);
+			var myTimer = setInterval(print,500);
+			var k = 0;
+			function print(){ poetText.innerHTML += poetArr[k];
+			k++;
+			if (k == poetArr.length ){poetText.innerHTML = " ";
+			k = 0; }
+			
+			}
+
+
+
+
+			// 우주 배경
+			document.body.style.height = window.innerHeight + "px";
+			setInterval(star,3);
+			function star(){
+				var a = document.createElement("img");
+				a.style.left = randomBH(0,window.innerWidth) + "px";
+				a.style.top = randomBH(30, (window.innerHeight - 200)) + "px";
+				a.src = "st.png";
+				a.addEventListener("animationend", function(e){ 
+					e.target.parentNode.removeChild(e.target);
+				});
+				document.body.appendChild(a);
+			}
+				
+			function randomBH(min, max) {
+			  min = Math.ceil(min);
+			  max = Math.floor(max);
+			  return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			window.onmousemove = function(e){
+				document.body.style.perspectiveOrigin = e.clientX + "px " + e.clientY+"px";
+			}
+			
+			// 컬러
+			c1.oninput = function()
+			{document.body.style.background=c1.value;}
+							
+	</script>
+
+
+
+		
+
+</body>
+</html>
